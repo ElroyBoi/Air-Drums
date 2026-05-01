@@ -268,11 +268,11 @@ void playDrum(const uint8_t* data, uint32_t length) {
 }
 
 // ── Sensor pins ───//
-#define TRIG1 5    // kick  (built-in)
+#define TRIG1 5    // hi-Hat  (built-in)
 #define ECHO1 16
-#define TRIG2 4    // snare
+#define TRIG2 4    // kick
 #define ECHO2 13
-#define TRIG3 19   // hi-hat
+#define TRIG3 19   // snare
 #define ECHO3 14
 
 // ── Trigger config ────────────────────────────────────────────────────────────
@@ -291,9 +291,10 @@ struct DrumSensor {
 };
 
 DrumSensor sensors[] = {
-  { TRIG1, ECHO1, "KICK",   kick_data,  kick_length,  false, 0 },
-  { TRIG2, ECHO2, "SNARE",  snare_data, snare_length, false, 0 },
-  { TRIG3, ECHO3, "HI-HAT", hihat_data, hihat_length, false, 0 },
+  { TRIG1, ECHO1, "HI-HAT", hihat_data, hihat_length, false, 0 },
+  { TRIG2, ECHO2, "KICK",   kick_data,  kick_length,  false, 0 },
+  { TRIG3, ECHO3, "SNARE",  snare_data, snare_length, false, 0 },
+
 };
 const int NUM_SENSORS = sizeof(sensors) / sizeof(sensors[0]);
 
